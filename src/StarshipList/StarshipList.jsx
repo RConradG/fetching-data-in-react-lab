@@ -1,6 +1,6 @@
 import StarshipCard from '../StarshipCard/StarshipCard';
 
-const StarshipList = ({ starshipsData }) => {
+const StarshipList = ({ displayedStarships }) => {
 
   // const starshipsList = starshipsData.map((starship, index) =>
   //   <StarshipCard starship={starship} index={index} />
@@ -9,7 +9,7 @@ const StarshipList = ({ starshipsData }) => {
     <div className='starshipList'>
       <h2>Starships</h2>
       <ul>
-        <StarshipCard starshipsData={starshipsData} />
+        <StarshipCard displayedStarships={displayedStarships} />
       </ul>
     </div>
   );

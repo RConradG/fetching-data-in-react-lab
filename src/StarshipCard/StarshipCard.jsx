@@ -1,7 +1,7 @@
-const StarshipCard = ({ starshipsData }) => {
+const StarshipCard = ({ displayedStarships }) => {
   return (
     <>
-      {starshipsData.map((starship, index) => (
+      {displayedStarships.map((starship, index) => (
         <li key={index} className='card'>
           <h3>{starship.name}</h3>
           <p>Class: {starship.starship_class}</p>
