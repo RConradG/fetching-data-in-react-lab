@@ -6,17 +6,11 @@ const showStarshipList = async () => {
     if (!res.ok) {
       throw new Error('Failed to fetch starships.')
     }
-    
     const data = await res.json();
-    console.log('Data:', data);
-      // .then((res) => res.json)
-      // .then((json) => console.log(json))
-      // .catch((error) => console.error(error));
       return data;
-    
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching starships:', error);
   }
 };
 
-showStarshipList();
+export { showStarshipList };
