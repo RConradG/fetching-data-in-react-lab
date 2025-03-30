@@ -11,6 +11,7 @@ const App = () => {
 
   const [starshipsData, setStarshipsData] = useState([]);
   const [displayedStarships, setDisplayedStarships] = useState([]);
+  let numberOfStarships = displayedStarships.length;
 
   useEffect( () => {
     const fetchDefaultData = async () => {
@@ -31,6 +32,7 @@ const App = () => {
       
     }, []);
 
+    // searches starships list for any matches user enters
     const search =  (starshipToFind) => {
       const filteredStarships =  starshipsData.filter(starship => 
         starship.name.toLowerCase().includes(starshipToFind.toLowerCase())
@@ -41,16 +43,17 @@ const App = () => {
         return 'Starship not found'
       } 
       setDisplayedStarships(filteredStarships);
+      numberOfStarships = displayedStarships.length;
     }
 
   return (
     <>
       <h1>Starships</h1>
-      <StarshipSearch search = { search }/>
-      <StarshipList displayedStarships={ displayedStarships }/>
+      <StarshipSearch search = { search } numberOfStarships={numberOfStarships} />
+      <StarshipList displayedStarships={ displayedStarships } />
     </>
   );
 }
 
 export default App
-                                                                                  
+                                                                              
