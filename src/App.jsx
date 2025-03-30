@@ -31,12 +31,26 @@ const App = () => {
       
     }, []);
 
+    const search =  (starshipToFind) => {
+      const filteredStarships =  starshipsData.filter(starship => 
+        starship.name.toLowerCase().includes(starshipToFind.toLowerCase())
+      );
+
+      if (!filteredStarships) {
+        console.log('Starship not found');
+        return 'Starship not found'
+      } 
+      setDisplayedStarships(filteredStarships);
+    }
+
   return (
     <>
       <h1>Starships</h1>
-      <StarshipList starshipsData={ starshipsData }/>
+      <StarshipSearch search = { search }/>
+      <StarshipList displayedStarships={ displayedStarships }/>
     </>
   );
 }
 
 export default App
+                                                                                  
