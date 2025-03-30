@@ -33,8 +33,8 @@ const App = () => {
 
   return (
     <>
-      <h1>Hello world!</h1>
-      <button>Fetch</button>
+      <h1>Starships</h1>
+      <StarshipList starshipsData={ starshipsData }/>
     </>
   );
 }
