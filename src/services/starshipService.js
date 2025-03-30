@@ -10,6 +10,7 @@ const showStarshipList = async () => {
       return data;
   } catch (error) {
     console.error('Error fetching starships:', error);
+    return [];
   }
 };
 
